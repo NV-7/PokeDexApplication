@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/pokedexHeader"
+        android:layout_width="176dp"
+        android:layout_height="45dp"
+        android:text="@string/pokedexheader"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <TextView
+        android:id="@+id/pokedexSubHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pokedexsubheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokedexHeader" />
+
+    <TextView
+        android:id="@+id/nationalNumLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/nationalnumlabel"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokedexSubHeader"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/namelabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/Species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/specieslabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/Gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/genderlablel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="@string/heightlabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="@string/weightlabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:text="@string/levellabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="@string/hplabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:text="@string/attacklabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:text="@string/defenselabel"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <TextView
+        android:id="@+id/basestat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="220dp"
+        android:text="@string/basestatsheader"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

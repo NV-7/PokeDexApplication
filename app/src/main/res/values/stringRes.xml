@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pokedexheader">PokeDex Entry</string>
+    <string name="pokedexsubheader">Please fill out the form below </string>
+    <string name="nationalnumlabel">National Dex Entry</string>
+    <string name="namelabel">Name</string>
+    <string name="specieslabel">Species</string>
+    <string name="genderlablel">Gender</string>
+    <string name="heightlabel">Height</string>
+    <string name="weightlabel">Weight</string>
+    <string name="basestatsheader">Base Stats</string>
+    <string name="levellabel">Ability</string>
+    <string name="hplabel">HP</string>
+    <string name="attacklabel">Attack Power</string>
+    <string name="defenselabel">Defense</string>
+    <string name="app_name">Application</string>
+
+
+
+</resources>
