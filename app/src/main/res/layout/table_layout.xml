@@ -1,7 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-            android:id="@+id/main">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <TableRow>
+
+        <TextView
+            android:id="@+id/pokedexHeader"
+            android:layout_width="176dp"
+            android:layout_height="45dp"
+            android:text="@string/pokedexheader"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.044" />
+    </TableRow>
+
+
+    <TextView
+        android:id="@+id/pokedexSubHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pokedexsubheader"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokedexHeader" />
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/nationalNumLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nationalnumlabel"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/nationalNumEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nationalEdit"
+            android:inputType="number"
+            />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="@string/namelabel"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/nameEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/nameEdit" />
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/Species"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/specieslabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/speciesEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="@string/speciesEdit"
+            app:layout_constraintStart_toEndOf="@+id/nationalNumLabel"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/Species" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/Gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/genderlablel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="329dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="-30dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/Gender">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:text="@string/maleRadio"
+                app:layout_constraintStart_toStartOf="@+id/nameEdit"
+                app:layout_constraintTop_toTopOf="@+id/Gender" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/femaleRadio"
+                app:layout_constraintStart_toEndOf="@+id/radioButtonMale"
+                app:layout_constraintTop_toTopOf="@+id/radioButtonMale" />
+
+            <RadioButton
+                android:id="@+id/radioButtonUnknown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/radioButtonUnknown"
+                app:layout_constraintStart_toEndOf="@+id/radioButtonFemale"
+                app:layout_constraintTop_toTopOf="@+id/radioButtonMale" />
+
+
+        </RadioGroup>
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heightlabel"
+            android:textSize="20sp"
+            android:digits="1"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/heightEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/heightEdit"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/height" />
+
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weightlabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/weightEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="@string/weightEdit"
+            app:layout_constraintStart_toEndOf="@+id/nationalNumLabel"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/weight" />
+
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/levelLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/levellabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <Spinner
+            android:id="@+id/levelSpinner"
+            android:layout_width="257dp"
+            android:gravity="top"
+            android:text="@string/levelSpinner"
+            android:entries="@array/levelSpinnerArray"
+            />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/basestat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/basestatsheader"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hplabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/hpEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/hpEdit"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/hp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/attacklabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/attackEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/attackEdit"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/attack" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/defenselabel"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/nationalNumLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nationalNumLabel" />
+
+        <EditText
+            android:id="@+id/defenseEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:inputType="number"
+            android:text="@string/defenseEdit"
+            app:layout_constraintStart_toStartOf="@+id/nameEdit"
+            app:layout_constraintTop_toTopOf="@+id/defense" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resetButton" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submitButton" />
+    </TableRow>
+    <Button
+        android:id="@+id/layoutSwitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/layoutButton"
+    />
+
+    <TableRow>
+
+
+    </TableRow>
 </TableLayout>

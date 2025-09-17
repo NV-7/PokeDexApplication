@@ -9,11 +9,81 @@
     <string name="heightlabel">Height</string>
     <string name="weightlabel">Weight</string>
     <string name="basestatsheader">Base Stats</string>
-    <string name="levellabel">Ability</string>
+    <string name="levellabel">Level</string>
     <string name="hplabel">HP</string>
     <string name="attacklabel">Attack Power</string>
     <string name="defenselabel">Defense</string>
     <string name="app_name">Application</string>
+    <string name="nationalEdit">896</string>
+    <string name="nameEdit">Glastrier</string>
+    <string name="speciesEdit">Wild Horse Pokemon</string>
+    <string name="maleRadio">Male</string>
+    <string name="femaleRadio">Female</string>
+    <string name="heightEdit">2.2</string>
+    <string name="weightEdit">800.0</string>
+    <string name="attackEdit">0</string>
+    <string name="hpEdit">0</string>
+    <string name="defenseEdit">0</string>
+    <string name="resetButton">Reset</string>
+    <string name="submitButton">Submit</string>
+    <string name="radioButtonUnknown">Unknown</string>
+    <string name="levelSpinner">Select a Level</string>
+    <string name="layoutButton">Switch Layout</string>
+
+    <string-array name="levelSpinnerArray">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+    </string-array>
+
+
 
 
 
