@@ -236,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
                     weightEdit.append("kg");
                 }
 
+                heightEdit.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+                weightEdit.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+
                 Toast.makeText(v.getContext(), "Pokemon Added to PokeDex", Toast.LENGTH_SHORT).show();
             }
 
