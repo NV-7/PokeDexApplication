@@ -2,6 +2,7 @@ package com.example.application_navibountho;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -75,24 +76,23 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-          currentLayoutID = layouts[nextLayout];
-          setContentView(currentLayoutID);
-          initiallizeViewsAndListeners();
-          nextLayout = (nextLayout + 1) % layouts.length;
-          String layoutName = getResources().getResourceName(currentLayoutID).toString();
-          Toast.makeText(v.getContext(), "Switched to " + layoutName, Toast.LENGTH_SHORT).show();
+            currentLayoutID = layouts[nextLayout];
+            setContentView(currentLayoutID);
+            initiallizeViewsAndListeners();
+            nextLayout = (nextLayout + 1) % layouts.length;
+            String layoutName = getResources().getResourceName(currentLayoutID).toString();
+            Toast.makeText(v.getContext(), "Switched to " + layoutName, Toast.LENGTH_SHORT).show();
         }
 
     };
 
-    public void initiallizeViewsAndListeners(){
+    public void initiallizeViewsAndListeners() {
 
         layoutSwitcher = findViewById(R.id.layoutSwitcher);
 
-        if(layoutSwitcher != null){
+        if (layoutSwitcher != null) {
             layoutSwitcher.setOnClickListener(layoutListener);
-        }
-        else{
+        } else {
             Log.e("layoutSwitcher", "layoutSwitcher is null");
         }
 
@@ -110,10 +110,10 @@ public class MainActivity extends AppCompatActivity {
         genderRadioGroup = findViewById(R.id.genderRadioGroup);
         levelSpinner = findViewById(R.id.levelSpinner);
 
-        if(submitButton != null){
+        if (submitButton != null) {
             submitButton.setOnClickListener(submitListener);
         }
-        if(resetButton != null){
+        if (resetButton != null) {
             resetButton.setOnClickListener(resetListener);
         }
     }
@@ -162,14 +162,12 @@ public class MainActivity extends AppCompatActivity {
                 height = Float.parseFloat(heightStr);
             } else {
                 height = Float.parseFloat(heightStr);
-                heightEdit.append("m");
             }
             if (weightStr.contains("kg")) {
                 weightStr = weightStr.replace("kg", "");
                 weight = Float.parseFloat(weightStr);
             } else {
                 weight = Float.parseFloat(weightStr);
-                weightEdit.append("kg");
             }
 
 
@@ -216,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(v.getContext(), "Please select a gender", Toast.LENGTH_SHORT).show();
 
             } else {
+
+
                 nationalNumEdit.setTextColor(Color.BLACK);
                 nameEdit.setTextColor(Color.BLACK);
                 speciesEdit.setTextColor(Color.BLACK);
@@ -225,6 +225,16 @@ public class MainActivity extends AppCompatActivity {
                 attackEdit.setTextColor(Color.BLACK);
                 defenseEdit.setTextColor(Color.BLACK);
                 genderRadioGroup.setBackgroundColor(Color.TRANSPARENT);
+
+                if (!heightEdit.getText().toString().endsWith("m")) {
+                    heightEdit.setInputType(InputType.TYPE_CLASS_TEXT);
+                    heightEdit.append("m");
+
+                }
+                if (!weightEdit.getText().toString().trim().endsWith("kg")) {
+                    weightEdit.setInputType(InputType.TYPE_CLASS_TEXT);
+                    weightEdit.append("kg");
+                }
 
                 Toast.makeText(v.getContext(), "Pokemon Added to PokeDex", Toast.LENGTH_SHORT).show();
             }
