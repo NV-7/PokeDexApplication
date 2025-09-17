@@ -19,6 +19,7 @@
         android:id="@+id/pokedexHeader"
         android:layout_width="176dp"
         android:layout_height="45dp"
+        android:layout_marginTop="30dp"
         android:text="@string/pokedexheader"
         android:textSize="24sp"
         android:textStyle="bold" />
