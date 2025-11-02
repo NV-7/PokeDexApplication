@@ -25,7 +25,7 @@ public class MyContentProvider extends ContentProvider {
     public final static String DEFENSE_COL = "Defense";
     public final static String ID_COL = "ID";
     private static final String  SQL_CREATE_MAIN = "CREATE TABLE pokedex ( " + ID_COL +
-            " INTEGER PRIMARY KEY AUTOINCREMENT, " + NATIONAL_NUM_COL + " INTEGER, " +
+            " INTEGER PRIMARY KEY AUTOINCREMENT, " + NATIONAL_NUM_COL + " INTEGER UNIQUE, " +
             NAME_COL + " TEXT, " +
             SPECIES_COL + " TEXT, " +
             HEIGHT_COL + " REAL, " +
@@ -43,7 +43,7 @@ public class MyContentProvider extends ContentProvider {
 protected final class MainDatabaseHelper extends SQLiteOpenHelper {
 
     MainDatabaseHelper (Context context){
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 2);
     }
 
     @Override
@@ -53,7 +53,8 @@ protected final class MainDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLENAME);
+        onCreate(db);
     }
 }
     public MyContentProvider() {
@@ -64,12 +65,20 @@ protected final class MainDatabaseHelper extends SQLiteOpenHelper {
         // Implement this to handle requests to delete one or more rows.
         mHelper = new MainDatabaseHelper(getContext());
         SQLiteDatabase db = mHelper.getWritableDatabase();
+        String id = uri.getLastPathSegment();
+        String newSelection = ID_COL + " = ?";
+        String[] newSelectionArgs = {id};
+        selection = newSelection;
+        selectionArgs = newSelectionArgs;
+        return db.delete(TABLENAME, selection, selectionArgs);
 
-        int rowsDelete = db.delete(TABLENAME, selection, selectionArgs);
-        if(rowsDelete > 0 && getContext() != null){
-            getContext().getContentResolver().notifyChange(uri, null);
-        }
-        return rowsDelete;
+
+//        int rowsDelete = db.delete(TABLENAME, selection, selectionArgs);
+//        if(rowsDelete > 0 && getContext() != null){
+//            getContext().getContentResolver().notifyChange(uri, null);
+//        }
+
+       // return rowsDelete;
 
       //  throw new UnsupportedOperationException("Not yet implemented");
     }
@@ -88,8 +97,11 @@ protected final class MainDatabaseHelper extends SQLiteOpenHelper {
         long id = mHelper.getWritableDatabase().insert(TABLENAME, null,values);
         if(id > 0 && getContext() != null){
             getContext().getContentResolver().notifyChange(uri, null);
+            return Uri.withAppendedPath(CONTENT_URI, "" + id);
         }
-        return Uri.withAppendedPath(CONTENT_URI, "" + id);
+        else{
+            return null;
+        }
     }
 
     @Override

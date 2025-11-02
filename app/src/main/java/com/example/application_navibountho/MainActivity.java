@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -25,6 +26,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -281,9 +283,14 @@ public class MainActivity extends AppCompatActivity {
                 cv.put(MyContentProvider.ATTACK_COL,attack);
                 cv.put(MyContentProvider.DEFENSE_COL,defense);
                 ContentResolver cr = getContentResolver();
-                cr.insert(MyContentProvider.CONTENT_URI, cv);
+                Uri resultURI = cr.insert(MyContentProvider.CONTENT_URI, cv);
 
                 Cursor c = cr.query(MyContentProvider.CONTENT_URI, null, null, null, MyContentProvider.ID_COL + " DESC");
+
+                if( resultURI == null){
+                    Toast.makeText(v.getContext(), "Cannot add the a Pokemon with the same National Number", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (c != null && c.moveToFirst()) {
 
@@ -315,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
                     c.close();
                 }
 
-               // cr.update(MyContentProvider.CONTENT_URI,cv,null,null);
+                // cr.update(MyContentProvider.CONTENT_URI,cv,null,null);
 
                 Toast.makeText(v.getContext(), "Pokemon Added to PokeDex", Toast.LENGTH_SHORT).show();
             }

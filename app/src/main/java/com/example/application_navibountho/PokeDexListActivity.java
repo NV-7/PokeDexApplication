@@ -1,7 +1,9 @@
 package com.example.application_navibountho;
 
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -81,7 +83,7 @@ public class PokeDexListActivity extends AppCompatActivity {
             builder.setTitle("Delete Pokemon?");
 
             builder.setPositiveButton("Yes", (dialog, which) -> {
-                delete();
+                delete((int) id);
                 dialog.dismiss();
             });
 
@@ -96,9 +98,10 @@ public class PokeDexListActivity extends AppCompatActivity {
         }
     };
 
-    public void delete(){
+    public void delete(int id){
         ContentResolver cr = getContentResolver();
-        cr.delete(MyContentProvider.CONTENT_URI, null);
+        Uri uri = ContentUris.withAppendedId(MyContentProvider.CONTENT_URI, id);
+        cr.delete(uri, null, null);
         recreate();
     }
     public AdapterView.OnItemLongClickListener onHold1 = (parent, view, position, id) ->
