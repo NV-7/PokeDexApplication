@@ -12,11 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Application_NaviBountho">
         <activity
+            android:name=".PokeDexListActivity"
+            android:exported="false" />
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.example.application_navibountho.MyContentProvider"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

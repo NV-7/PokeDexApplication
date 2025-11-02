@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+   >
+
+    <!-- Name and Level in a row -->
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pikachu"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvLevel"
+        tools:text="Pikachu" />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lv. 50"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Lv. 50" />
+
+    <!-- National Number and Gender -->
+    <TextView
+        android:id="@+id/tvNationalNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#0025"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:text="#0025" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="♂"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLevel"
+        tools:text="♂" />
+
+    <!-- Species -->
+    <TextView
+        android:id="@+id/tvSpecies"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Mouse Pokémon"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNationalNumber"
+        tools:text="Mouse Pokémon" />
+
+    <!-- Stats Row: HP, Attack, Defense -->
+    <LinearLayout
+        android:id="@+id/statsRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpecies">
+
+        <!-- HP -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HP"
+                android:textSize="10sp"
+               />
+
+            <TextView
+                android:id="@+id/tvHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="35" />
+        </LinearLayout>
+
+        <!-- Attack -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ATK"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:id="@+id/tvAttack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="55"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="55" />
+        </LinearLayout>
+
+        <!-- Defense -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEF"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:id="@+id/tvDefence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="40" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Height and Weight -->
+    <LinearLayout
+        android:id="@+id/sizeRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statsRow">
+
+        <!-- Height -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height:"
+                android:textSize="10sp"
+                 />
+
+            <TextView
+                android:id="@+id/tvHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.4m"
+                android:textSize="10sp"
+                android:layout_marginStart="4dp"
+                tools:text="0.4m" />
+        </LinearLayout>
+
+        <!-- Weight -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight:"
+                android:textSize="10sp"
+                />
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6.0kg"
+                android:textSize="10sp"
+                android:layout_marginStart="4dp"
+                tools:text="6.0kg" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
